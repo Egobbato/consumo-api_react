@@ -1,3 +1,6 @@
+import {Button} from '../Button/styles'
+import { Item } from './styles'
+
 import { useEffect ,useState } from "react";
 
 interface IRepositorio{
@@ -21,13 +24,13 @@ const [favorito,setFavorito] = useState(false)
 
 
 return(
-    <li key={props.repositorio.id}>
+    <Item key={props.repositorio.id}>
         <strong>{props.repositorio.name}</strong>
         <p>{props.repositorio.description}</p>
         <a href={props.repositorio.html_url}>Acessar o Repositorio</a>
-        <button onClick={()=>setFavorito(true)}>Favoritar</button>
+        <Button onClick={()=>setFavorito(true)}>Favoritar</Button>
         {favorito?  <span>Favorito</span>:null}
-    </li>
+    </Item>
 )
 
 };
